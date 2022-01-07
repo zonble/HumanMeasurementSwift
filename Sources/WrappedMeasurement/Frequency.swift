@@ -1,11 +1,15 @@
 import Foundation
 
-public class Frequency: WrappedMeasurement {
-    public typealias T = UnitFrequency
+public struct Frequency: WrappedMeasurement {
+    public typealias UnitType = UnitFrequency
     public var measurement: Measurement<UnitFrequency>
 
     public init(_ value: Double, unit: UnitFrequency) {
         measurement = Measurement(value: value, unit: unit)
+    }
+
+    public init(_ inMeasurement: Measurement<UnitType>) {
+        measurement = inMeasurement
     }
 
     public var terahertz: Double {
@@ -40,10 +44,7 @@ public class Frequency: WrappedMeasurement {
         convert(to: .nanohertz)
     }
 
-    @available(iOS 13, *)
-    @available(tvOS 13, *)
-    @available(macOS 10.15, *)
-    @available(watchOS 6, *)
+    @available(iOS 13, tvOS 13, macOS 10.15, watchOS 6, *)
     public var framesPerSecond: Double {
         convert(to: .framesPerSecond)
     }

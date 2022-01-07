@@ -1,11 +1,15 @@
 import Foundation
 
-public class Volume: WrappedMeasurement {
-    public typealias T = UnitVolume
+public struct Volume: WrappedMeasurement {
+    public typealias UnitType = UnitVolume
     public var measurement: Measurement<UnitVolume>
 
     public init(_ value: Double, unit: UnitVolume) {
         measurement = Measurement(value: value, unit: unit)
+    }
+
+    public init(_ inMeasurement: Measurement<UnitType>) {
+        measurement = inMeasurement
     }
 
     public var megaliters: Double {

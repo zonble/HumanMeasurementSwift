@@ -1,15 +1,16 @@
 import Foundation
 
-@available(iOS 13, *)
-@available(tvOS 13, *)
-@available(macOS 10.15, *)
-@available(watchOS 6, *)
-public class InformationStorage: WrappedMeasurement {
-    public typealias T = UnitInformationStorage
+@available(iOS 13, tvOS 13, macOS 10.15, watchOS 6, *)
+public struct InformationStorage: WrappedMeasurement {
+    public typealias UnitType = UnitInformationStorage
     public var measurement: Measurement<UnitInformationStorage>
 
     public init(_ value: Double, unit: UnitInformationStorage) {
         measurement = Measurement(value: value, unit: unit)
+    }
+
+    public init(_ inMeasurement: Measurement<UnitType>) {
+        measurement = inMeasurement
     }
 
     public var bytes: Double {

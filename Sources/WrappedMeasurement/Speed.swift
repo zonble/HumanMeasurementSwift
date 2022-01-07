@@ -1,11 +1,15 @@
 import Foundation
 
-public class Speed: WrappedMeasurement {
-    public typealias T = UnitSpeed
+public struct Speed: WrappedMeasurement {
+    public typealias UnitType = UnitSpeed
     public var measurement: Measurement<UnitSpeed>
 
     public init(_ value: Double, unit: UnitSpeed) {
         measurement = Measurement(value: value, unit: unit)
+    }
+
+    public init(_ inMeasurement: Measurement<UnitType>) {
+        measurement = inMeasurement
     }
 
     public var metersPerSecond: Double {

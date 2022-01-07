@@ -1,11 +1,15 @@
 import Foundation
 
-public class FuelEfficiency: WrappedMeasurement {
-    public typealias T = UnitFuelEfficiency
+public struct FuelEfficiency: WrappedMeasurement {
+    public typealias UnitType = UnitFuelEfficiency
     public var measurement: Measurement<UnitFuelEfficiency>
 
     public init(_ value: Double, unit: UnitFuelEfficiency) {
         measurement = Measurement(value: value, unit: unit)
+    }
+
+    public init(_ inMeasurement: Measurement<UnitType>) {
+        measurement = inMeasurement
     }
 
     public var litersPer100Kilometers: Double {

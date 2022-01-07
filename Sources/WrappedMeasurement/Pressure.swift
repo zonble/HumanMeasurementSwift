@@ -1,11 +1,15 @@
 import Foundation
 
-public class Pressure: WrappedMeasurement {
-    public typealias T = UnitPressure
+public struct Pressure: WrappedMeasurement {
+    public typealias UnitType = UnitPressure
     public var measurement: Measurement<UnitPressure>
 
     public init(_ value: Double, unit: UnitPressure) {
         measurement = Measurement(value: value, unit: unit)
+    }
+
+    public init(_ inMeasurement: Measurement<UnitType>) {
+        measurement = inMeasurement
     }
 
     public var newtonsPerMetersSquared: Double {

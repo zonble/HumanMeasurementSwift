@@ -1,11 +1,15 @@
 import Foundation
 
 public struct Area: WrappedMeasurement {
-    public typealias T = UnitArea
+    public typealias UnitType = UnitArea
     public var measurement: Measurement<UnitArea>
 
     public init(_ value: Double, unit: UnitArea) {
         measurement = Measurement(value: value, unit: unit)
+    }
+
+    public init(_ inMeasurement: Measurement<UnitType>) {
+        measurement = inMeasurement
     }
 
     public var squareMegameters: Double {

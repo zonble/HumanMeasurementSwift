@@ -1,11 +1,15 @@
 import Foundation
 
 public struct Angle: WrappedMeasurement {
-    public typealias T = UnitAngle
+    public typealias UnitType = UnitAngle
     public var measurement: Measurement<UnitAngle>
 
     public init(_ value: Double, unit: UnitAngle) {
         measurement = Measurement(value: value, unit: unit)
+    }
+
+    public init(_ inMeasurement: Measurement<UnitType>) {
+        measurement = inMeasurement
     }
 
     public var degrees: Double {

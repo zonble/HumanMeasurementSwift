@@ -1,13 +1,17 @@
 import Foundation
 
 public struct Acceleration: WrappedMeasurement {
-    public typealias T = UnitAcceleration
+    public typealias UnitType = UnitAcceleration
     public var measurement: Measurement<UnitAcceleration>
     
     public init(_ value: Double, unit: UnitAcceleration) {
-        measurement = Measurement(value: value, unit: unit)
+        self.init(Measurement(value: value, unit: unit))
     }
-    
+
+    public init(_ inMeasurement: Measurement<UnitType>) {
+        measurement = inMeasurement
+    }
+
     public var metersPerSecondSquared: Double {
         convert(to: .metersPerSecondSquared)
     }

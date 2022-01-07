@@ -1,11 +1,15 @@
 import Foundation
 
-public class ElectricCharge: WrappedMeasurement {
-    public typealias T = UnitElectricCharge
+public struct ElectricCharge: WrappedMeasurement {
+    public typealias UnitType = UnitElectricCharge
     public var measurement: Measurement<UnitElectricCharge>
 
     public init(_ value: Double, unit: UnitElectricCharge) {
         measurement = Measurement(value: value, unit: unit)
+    }
+
+    public init(_ inMeasurement: Measurement<UnitType>) {
+        measurement = inMeasurement
     }
 
     public var coulombs: Double {

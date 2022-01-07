@@ -1,11 +1,15 @@
 import Foundation
 
-public class Length: WrappedMeasurement {
-    public typealias T = UnitLength
+public struct Length: WrappedMeasurement {
+    public typealias UnitType = UnitLength
     public var measurement: Measurement<UnitLength>
 
     public init(_ value: Double, unit: UnitLength) {
         measurement = Measurement(value: value, unit: unit)
+    }
+
+    public init(_ inMeasurement: Measurement<UnitType>) {
+        measurement = inMeasurement
     }
 
     public var megameters: Double {
