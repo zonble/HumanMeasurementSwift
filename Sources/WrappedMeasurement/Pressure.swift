@@ -1,5 +1,14 @@
 import Foundation
 
+extension UnitPressure {
+    public class var psi: UnitPressure {
+        UnitPressure.poundsForcePerSquareInch
+    }
+    public class var kpa: UnitPressure {
+        UnitPressure.kilopascals
+    }
+}
+
 public struct Pressure: WrappedMeasurement {
     public typealias UnitType = UnitPressure
     public var measurement: Measurement<UnitPressure>
@@ -10,6 +19,14 @@ public struct Pressure: WrappedMeasurement {
 
     public init(_ inMeasurement: Measurement<UnitType>) {
         measurement = inMeasurement
+    }
+
+    public init(psi value: Double) {
+        measurement = Measurement(value: value, unit: .poundsForcePerSquareInch)
+    }
+
+    public init(kap value: Double) {
+        measurement = Measurement(value: value, unit: .kilopascals)
     }
 
     public var newtonsPerMetersSquared: Double {

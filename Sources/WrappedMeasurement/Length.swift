@@ -1,5 +1,26 @@
 import Foundation
 
+extension UnitLength {
+    public class var km: UnitLength {
+        UnitLength.kilometers
+    }
+    public class var m: UnitLength {
+        UnitLength.megameters
+    }
+    public class var cm: UnitLength {
+        UnitLength.centimeters
+    }
+    public class var mm: UnitLength {
+        UnitLength.millimeters
+    }
+    public class var nm: UnitLength {
+        UnitLength.nanometers
+    }
+    public class var `in`: UnitLength {
+        UnitLength.inches
+    }
+}
+
 public struct Length: WrappedMeasurement {
     public typealias UnitType = UnitLength
     public var measurement: Measurement<UnitLength>
@@ -12,11 +33,39 @@ public struct Length: WrappedMeasurement {
         measurement = inMeasurement
     }
 
+    public init(km value: Double) {
+        measurement = Measurement(value: value, unit: .kilometers)
+    }
+
+    public init(m value: Double) {
+        measurement = Measurement(value: value, unit: .megameters)
+    }
+
+    public init(cm value: Double) {
+        measurement = Measurement(value: value, unit: .centimeters)
+    }
+
+    public init(mm value: Double) {
+        measurement = Measurement(value: value, unit: .millimeters)
+    }
+
+    public init(nm value: Double) {
+        measurement = Measurement(value: value, unit: .nanometers)
+    }
+
+    public init(`in` value: Double) {
+        measurement = Measurement(value: value, unit: .inches)
+    }
+
     public var megameters: Double {
         convert(to: .megameters)
     }
 
     public var kilometers: Double {
+        convert(to: .kilometers)
+    }
+
+    public var km: Double {
         convert(to: .kilometers)
     }
 
@@ -32,6 +81,10 @@ public struct Length: WrappedMeasurement {
         convert(to: .meters)
     }
 
+    public var m: Double {
+        convert(to: .meters)
+    }
+
     public var decimeters: Double {
         convert(to: .decimeters)
     }
@@ -40,7 +93,15 @@ public struct Length: WrappedMeasurement {
         convert(to: .centimeters)
     }
 
+    public var cm: Double {
+        convert(to: .centimeters)
+    }
+
     public var millimeters: Double {
+        convert(to: .millimeters)
+    }
+
+    public var mm: Double {
         convert(to: .millimeters)
     }
 
@@ -52,11 +113,19 @@ public struct Length: WrappedMeasurement {
         convert(to: .nanometers)
     }
 
+    public var nm: Double {
+        convert(to: .nanometers)
+    }
+
     public var picometers: Double {
         convert(to: .picometers)
     }
 
     public var inches: Double {
+        convert(to: .inches)
+    }
+
+    public var `in`: Double {
         convert(to: .inches)
     }
 

@@ -1,5 +1,14 @@
 import Foundation
 
+extension UnitMass {
+    public class var kg: UnitMass {
+        UnitMass.kilograms
+    }
+    public class var g: UnitMass {
+        UnitMass.grams
+    }
+}
+
 public struct Mass: WrappedMeasurement {
     public typealias UnitType = UnitMass
     public var measurement: Measurement<UnitMass>
@@ -10,6 +19,14 @@ public struct Mass: WrappedMeasurement {
 
     public init(_ inMeasurement: Measurement<UnitType>) {
         measurement = inMeasurement
+    }
+
+    public init(kg: Double) {
+        measurement = Measurement(value: kg, unit: .kilograms)
+    }
+
+    public init(g: Double) {
+        measurement = Measurement(value: g, unit: .grams)
     }
 
     public var kilograms: Double {

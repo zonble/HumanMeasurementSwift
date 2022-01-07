@@ -1,11 +1,20 @@
 import Foundation
 
-func Celsius(_ value: Double) -> Temperature {
+public func Celsius(_ value: Double) -> Temperature {
     Temperature(celsius: value)
 }
 
-func Fahrenheit(_ value: Double) -> Temperature {
+public func Fahrenheit(_ value: Double) -> Temperature {
     Temperature(fahrenheit: value)
+}
+
+extension UnitTemperature {
+    public class var c: UnitTemperature {
+        UnitTemperature.celsius
+    }
+    public class var f: UnitTemperature {
+        UnitTemperature.fahrenheit
+    }
 }
 
 public struct Temperature: WrappedMeasurement {
@@ -24,8 +33,16 @@ public struct Temperature: WrappedMeasurement {
         self.init(celsius, unit: .celsius)
     }
 
+    public init(c: Double) {
+        self.init(c, unit: .celsius)
+    }
+
     public init(fahrenheit: Double) {
         self.init(fahrenheit, unit: .celsius)
+    }
+
+    public init(f: Double) {
+        self.init(f, unit: .fahrenheit)
     }
 
     public var kelvin: Double {

@@ -1,5 +1,20 @@
 import Foundation
 
+extension UnitArea {
+    public class var km2: UnitArea {
+        UnitArea.squareKilometers
+    }
+    public class var m2: UnitArea {
+        UnitArea.squareMeters
+    }
+    public class var cm2: UnitArea {
+        UnitArea.squareCentimeters
+    }
+    public class var mm2: UnitArea {
+        UnitArea.squareMillimeters
+    }
+}
+
 public struct Area: WrappedMeasurement {
     public typealias UnitType = UnitArea
     public var measurement: Measurement<UnitArea>
