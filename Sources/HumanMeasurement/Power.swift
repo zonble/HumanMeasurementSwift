@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Power: WrappedMeasurement {
+public struct Power: HumanMeasurement {
     public typealias UnitType = UnitPower
     public var measurement: Measurement<UnitPower>
 

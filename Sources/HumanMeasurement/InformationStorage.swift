@@ -1,7 +1,7 @@
 import Foundation
 
 @available(iOS 13, tvOS 13, macOS 10.15, watchOS 6, *)
-public struct InformationStorage: WrappedMeasurement {
+public struct InformationStorage: HumanMeasurement {
     public typealias UnitType = UnitInformationStorage
     public var measurement: Measurement<UnitInformationStorage>
 

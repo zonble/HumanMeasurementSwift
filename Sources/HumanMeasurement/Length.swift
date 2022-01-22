@@ -13,15 +13,27 @@ extension UnitLength {
     public class var mm: UnitLength {
         UnitLength.millimeters
     }
+    public class var µm: UnitLength {
+        UnitLength.micrometers
+    }
     public class var nm: UnitLength {
         UnitLength.nanometers
     }
     public class var `in`: UnitLength {
         UnitLength.inches
     }
+    public class var mi: UnitLength {
+        UnitLength.miles
+    }
+    public class var ft: UnitLength {
+        UnitLength.feet
+    }
+    public class var yd: UnitLength {
+        UnitLength.yards
+    }
 }
 
-public struct Length: WrappedMeasurement {
+public struct Length: HumanMeasurement {
     public typealias UnitType = UnitLength
     public var measurement: Measurement<UnitLength>
 
@@ -49,6 +61,10 @@ public struct Length: WrappedMeasurement {
         measurement = Measurement(value: value, unit: .millimeters)
     }
 
+    public init(µm value: Double) {
+        measurement = Measurement(value: value, unit: .micrometers)
+    }
+
     public init(nm value: Double) {
         measurement = Measurement(value: value, unit: .nanometers)
     }
@@ -56,6 +72,19 @@ public struct Length: WrappedMeasurement {
     public init(`in` value: Double) {
         measurement = Measurement(value: value, unit: .inches)
     }
+
+    public init(mi value: Double) {
+        measurement = Measurement(value: value, unit: .miles)
+    }
+
+    public init(ft value: Double) {
+        measurement = Measurement(value: value, unit: .feet)
+    }
+
+    public init(yd value: Double) {
+        measurement = Measurement(value: value, unit: .yards)
+    }
+
 
     public var megameters: Double {
         convert(to: .megameters)
@@ -109,6 +138,10 @@ public struct Length: WrappedMeasurement {
         convert(to: .micrometers)
     }
 
+    public var µm: Double {
+        convert(to: .micrometers)
+    }
+
     public var nanometers: Double {
         convert(to: .nanometers)
     }
@@ -133,11 +166,23 @@ public struct Length: WrappedMeasurement {
         convert(to: .feet)
     }
 
+    public var ft: Double {
+        convert(to: .feet)
+    }
+
     public var yards: Double {
         convert(to: .yards)
     }
 
+    public var yd: Double {
+        convert(to: .yards)
+    }
+
     public var miles: Double {
+        convert(to: .miles)
+    }
+
+    public var mi: Double {
         convert(to: .miles)
     }
 

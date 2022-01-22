@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Angle: WrappedMeasurement {
+public struct Angle: HumanMeasurement {
     public typealias UnitType = UnitAngle
     public var measurement: Measurement<UnitAngle>
 

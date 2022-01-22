@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ConcentrationMass: WrappedMeasurement {
+public struct ConcentrationMass: HumanMeasurement {
     public typealias UnitType = UnitConcentrationMass
     public var measurement: Measurement<UnitConcentrationMass>
 

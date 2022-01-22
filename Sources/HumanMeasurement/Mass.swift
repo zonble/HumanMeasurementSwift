@@ -9,7 +9,7 @@ extension UnitMass {
     }
 }
 
-public struct Mass: WrappedMeasurement {
+public struct Mass: HumanMeasurement {
     public typealias UnitType = UnitMass
     public var measurement: Measurement<UnitMass>
 

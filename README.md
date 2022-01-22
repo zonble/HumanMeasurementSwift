@@ -1,4 +1,4 @@
-# WrappedMeasurement
+# HumanMeasurement
 
 2022 © Weizhong Yang a.k.a zonble
 
@@ -30,6 +30,6 @@ You can install the package using Swift package manager. Add the following lines
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/zonble/WrappedMeasurement.git"),
+    .package(url: "https://github.com/zonble/HumanMeasurement.git"),
 ],
 ```

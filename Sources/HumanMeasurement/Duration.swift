@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Duration: WrappedMeasurement {
+public struct Duration: HumanMeasurement {
     public typealias UnitType = UnitDuration
     public var measurement: Measurement<UnitDuration>
 

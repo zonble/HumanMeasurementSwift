@@ -9,7 +9,7 @@ extension UnitPressure {
     }
 }
 
-public struct Pressure: WrappedMeasurement {
+public struct Pressure: HumanMeasurement {
     public typealias UnitType = UnitPressure
     public var measurement: Measurement<UnitPressure>
 

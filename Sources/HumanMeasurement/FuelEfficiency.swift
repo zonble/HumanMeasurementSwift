@@ -1,6 +1,6 @@
 import Foundation
 
-public struct FuelEfficiency: WrappedMeasurement {
+public struct FuelEfficiency: HumanMeasurement {
     public typealias UnitType = UnitFuelEfficiency
     public var measurement: Measurement<UnitFuelEfficiency>
 

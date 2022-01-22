@@ -15,7 +15,7 @@ extension UnitArea {
     }
 }
 
-public struct Area: WrappedMeasurement {
+public struct Area: HumanMeasurement {
     public typealias UnitType = UnitArea
     public var measurement: Measurement<UnitArea>
 

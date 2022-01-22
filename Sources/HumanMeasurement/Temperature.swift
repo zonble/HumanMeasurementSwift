@@ -17,7 +17,7 @@ extension UnitTemperature {
     }
 }
 
-public struct Temperature: WrappedMeasurement {
+public struct Temperature: HumanMeasurement {
     public typealias UnitType = UnitTemperature
     public var measurement: Measurement<UnitTemperature>
 
