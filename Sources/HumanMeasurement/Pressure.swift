@@ -25,7 +25,7 @@ public struct Pressure: HumanMeasurement {
         measurement = Measurement(value: value, unit: .poundsForcePerSquareInch)
     }
 
-    public init(kap value: Double) {
+    public init(kpa value: Double) {
         measurement = Measurement(value: value, unit: .kilopascals)
     }
 
