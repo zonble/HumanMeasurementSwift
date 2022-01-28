@@ -11,3 +11,16 @@ jobs:
       - uses: actions/checkout@v1
       - name: Build
         run: swift build
+      - name: Build docs
+        run: sh build_doc.sh
+      - name: Deploy
+        run: |
+          cd docs
+          git init
+          git config user.name  "CI"
+          git config user.email "swift-ci@github.com"
+          git remote add secure-origin https://${{ secrets.ACCESS_TOKEN }}@github.com/zonble/HumanMeasurementSwift.git
+          git checkout -b gh-pages
+          git add .
+          git commit -m "Updated docs"
+          git push --force secure-origin gh-pages        
